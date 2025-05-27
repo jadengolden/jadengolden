@@ -1,48 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jaden’s Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Patrick+Hand&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <header>
-    <h1>Jaden’s Studio</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+/* Color Palette inspired by Georgia O’Keeffe's calm desert tones & Remy Charlip’s warmth */
+:root {
+  --soft-sand: #f8f4ef;
+  --warm-terra: #d4a373;
+  --deep-ochre: #bc6c25;
+  --dusty-olive: #9a8f7b;
+  --charcoal-gray: #3b3a36;
+  --off-white: #fffefb;
+}
 
-  <main>
-    <section id="hero">
-      <h2>A space where simplicity meets soulful creativity</h2>
-    </section>
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Libre Baskerville', serif;
+  background-color: var(--soft-sand);
+  color: var(--charcoal-gray);
+  line-height: 1.6;
+  padding-bottom: 4em;
+}
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m an artist and researcher inspired by the quiet beauty of natural forms and the joyful spirit of folk art.  
-        Combining minimal elegance with hand-drawn charm to share stories and work that feels both grounded and alive.
-      </p>
-    </section>
+/* Links */
+a {
+  color: var(--warm-terra);
+  text-decoration: none;
+  border-bottom: 1.5px dashed var(--warm-terra);
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
 
-    <section id="portfolio">
-      <h2>Portfolio</h2>
-      <p>Creative projects, professional work, and heartfelt explorations — links coming soon.</p>
-    </section>
+a:hover {
+  color: var(--deep-ochre);
+  border-bottom: 1.5px solid var(--deep-ochre);
+}
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    </section>
-  </main>
+/* Header */
 
-  <footer>
-    <p>© 2025 Jaden | Crafted with care and clarity</p>
-  </footer>
-</body>
-</html>
+header {
+  background: var(--off-white);
+  padding: 3em 1em 3.5em;
+  text-align: center;
+  border-bottom: 3px solid var(--dusty-olive);
+  box-shadow: inset 0 -5px 8px -5px var(--warm-terra);
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 3.6rem;
+  margin: 0 0 0.2em 0;
+  letter-spacing: 0.1em;
+  color: var(--deep-ochre);
+  /* subtle hand-drawn effect */
+  text-shadow:
+    1px 1px 0 var(--warm-terra),
+    2px 2px 0 var(--soft-sand);
+}
+
+/* Navigation */
+
+nav a {
+  margin: 0 1.5em;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--charcoal-gray);
+  position: relative;
+  text-shadow: 1px 1px var(--off-white);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--warm-terra);
+  transition: width 0.35s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Main Content */
+
+main {
+  max-width: 700px;
+  margin: 4em auto 6em;
+  padding: 0 1em;
+  background: var(--off-white);
+  border-radius: 14px;
+  box-shadow:
+    6px 10px 14px -8px var(--dusty-olive),
+    inset 0 0 6px var(--soft-sand);
+  border: 3px solid var(--warm-terra);
+}
+
+section {
+  padding: 2.5em 1.2em;
+  border-bottom: 2.5px solid var(--soft-sand);
+  font-size: 1.25rem;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+#hero {
+  text-align: center;
+  font-style: italic;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2rem;
+  color: var(--dusty-olive);
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+  letter-spacing: 0.06em;
+  border-bottom: 3px dashed var(--warm-terra);
+  margin-bottom: 1.5em;
+  background: linear-gradient(135deg, var(--soft-sand) 30%, var(--off-white) 100%);
+  border-radius: 14px 14px 0 0;
+}
+
+/* Headings */
+
+h2 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2.4rem;
+  margin-bottom: 0.5em;
+  color: var(--deep-ochre);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 2px var(--soft-sand);
+}
+
+/* Contact Section */
+
+#contact a {
+  font-weight: 700;
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem;
+  color: var(--charcoal-gray);
+  padding: 2em 1em 4em 1em;
+  border-top: 2px dotted var(--warm-terra);
+  background: var(--off-white);
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 0 0 14px 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.6rem;
+  }
+  nav a {
+    font-size: 1.2rem;
+    margin: 0 1em;
+  }
+  main {
+    margin: 3em 1em 4em;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
